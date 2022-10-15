@@ -3,7 +3,6 @@ import styles from "../styles/Home.module.css";
 import { Header } from "../components/Header";
 
 export default function Home({ users }) {
-  console.log("frome home", users);
   return (
     <div className={styles.container}>
       <Head>

@@ -2,7 +2,6 @@ import { Form, Button } from "react-bootstrap";
 import styles from "./Header.module.scss";
 
 export function Header({ users }) {
-  console.log("from header", users);
   return (
     <div>
       <svg
