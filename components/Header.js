@@ -1,10 +1,8 @@
 import { Form, Button } from "react-bootstrap";
 import styles from "./Header.module.scss";
-export function Header() {
-  let users = [
-    { id: 1, name: "Sevgi" },
-    { id: 2, name: "John" },
-  ];
+
+export function Header({ users }) {
+  console.log("from header", users);
   return (
     <div>
       <svg
@@ -27,7 +25,7 @@ export function Header() {
         >
           <option value="">Select User</option>
           {users.map((user) => (
-            <option value={user.id}>{user.name}</option>
+            <option value={user.user_id}>{user.user_name}</option>
           ))}
         </Form.Select>
         <Button variant="warning" className={styles.button} size="lg">
