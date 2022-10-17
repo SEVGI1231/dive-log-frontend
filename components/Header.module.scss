@@ -38,11 +38,15 @@
     padding: 0.5rem;
     font-weight: 500;
     text-align: center;
-    width: 5%;
+    width: 6%;
     background-color: #404B81;
     border-color: #404B81;
     color: #DBB190;
-   
+   &:disabled{
+    background-color: #ebcbb3;
+    color: #606375;
+    border-color: #ebcbb3;
+   }
 }
 $colours:(
 sand: #DBB190,

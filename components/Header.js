@@ -2,21 +2,7 @@ import { Form, Button } from "react-bootstrap";
 import styles from "./Header.module.scss";
 import { useState } from "react";
 
-export function Header({ users }) {
-  const [loggedInUser, setLoggedInUser] = useState("");
-  const [appState, setAppState] = useState({});
-  function handleSelect(e) {
-    setLoggedInUser(e.target.value);
-    console.log(loggedInUser);
-  }
-  function handleLogin() {
-    setAppState({ ...appState, userID: loggedInUser });
-  }
-  function handleLogout() {
-    setAppState({ ...appState, userID: null });
-    setLoggedInUser("");
-  }
-  console.log(appState);
+export function Header() {
   return (
     <div>
       <svg
@@ -32,28 +18,6 @@ export function Header({ users }) {
       </svg>
       <div className={styles.header}>
         <h1 className={styles.title}>Dive Log</h1>
-        <Form.Select
-          className={styles.users}
-          size="lg"
-          styles={{ width: "20%" }}
-          value={loggedInUser}
-          onChange={handleSelect}
-        >
-          <option value="">Select User</option>
-          {users.map((user) => (
-            <option key={user.user_id} value={user.user_id}>
-              {user.user_name}
-            </option>
-          ))}
-        </Form.Select>
-        <Button
-          onClick={appState.userID == null ? handleLogin : handleLogout}
-          variant="warning"
-          className={styles.button}
-          size="lg"
-        >
-          {appState.userID == null ? "Login" : "Logout"}
-        </Button>
       </div>
     </div>
   );
