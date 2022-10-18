@@ -8,7 +8,6 @@ export function AppWrapper({ children }) {
 
   return (
     <Context.Provider value={[appState, setAppState]}>
-      <Header />
       {children}
     </Context.Provider>
   );
