@@ -14,7 +14,6 @@ export default function Home({ users }) {
         <meta name="description" content="Created by Sevgi" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <br />
       <Login users={users} appState={appState} setAppState={setAppState} />
       <br />
       <MainButtons appState={appState} />
