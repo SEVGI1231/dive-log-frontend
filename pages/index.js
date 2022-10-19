@@ -1,18 +1,22 @@
 import Head from "next/head";
-import styles from "../styles/Home.module.css";
-import { Header } from "../components/Header";
+import { MainButtons } from "../components/MainButtons";
+import { useAppContext } from "../context/appWrapper";
+import Login from "../components/Login";
 
 export default function Home({ users }) {
+  const [appState, setAppState] = useAppContext();
+  console.log(appState.userID);
+  console.log(typeof appState.userID);
   return (
-    <div className={styles.container}>
+    <div>
       <Head>
         <title>Dive-log App</title>
         <meta name="description" content="Created by Sevgi" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div>
-        <Header users={users} />
-      </div>
+      <Login users={users} appState={appState} setAppState={setAppState} />
+      <br />
+      <MainButtons appState={appState} />
     </div>
   );
 }
