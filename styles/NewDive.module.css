@@ -1,0 +1,50 @@
+.form{
+    display: grid;
+    grid-template-columns: 0.7fr 1fr 0.5fr;
+   margin: 20px;
+    
+}
+.content > *{
+    margin: 10px;
+}
+.content > *> *{
+    margin: 5px
+}
+.notes{
+    display: flex;
+    flex-direction: column;
+ 
+}
+.notes > *{
+    margin: 5px;
+}
+.notes textarea{
+    width: 30rem;
+    height: 30rem;
+}
+.form label{
+    font-weight: bold;
+    color: #404B81;
+}
+.form input{
+    border-radius: 1rem;
+    padding: 5px;
+}
+.submit{
+    border-radius: 1rem;
+    width: 10rem;
+    height: 3rem;
+    font-weight: 600;
+    color: #f59b56;
+    background-color: #485282;
+    border: none;
+    font-size: larger;
+    margin-top: 20rem;
+}
+/* // $colours:(
+// sand: #DBB190,
+// navy: #404B81,
+// blue:#328396, 
+// turquoise:#6BB1A8,
+// green: #94CAB3,
+// yellow: #EBDFAE) */
