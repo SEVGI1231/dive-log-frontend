@@ -1,5 +1,4 @@
 import { createContext, useContext, useState } from "react";
-import { Header } from "../components/Header";
 
 const Context = createContext();
 

@@ -41,6 +41,21 @@
     font-size: larger;
     margin-top: 20rem;
 }
+.home{
+    border-radius: 1rem;
+    width: 10rem;
+    height: 3rem;
+    font-weight: 600;
+    color: #f59b56;
+    background-color: #485282;
+    border: none;
+    font-size: larger;
+    margin:10px;
+
+   &:hover{
+        background-color: #DBB190;
+   }}
+   
 /* // $colours:(
 // sand: #DBB190,
 // navy: #404B81,

@@ -1,0 +1,13 @@
+.page{
+    margin-top: 10rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: relative;
+    height: 100%;
+}
+.page >*{
+    margin: 10px;
+  
+}

@@ -1,8 +1,10 @@
 import { Form, Button } from "react-bootstrap";
 import styles from "./Header.module.scss";
 import { useState } from "react";
+import { useRouter } from "next/router";
 
 export function Header() {
+  const router = useRouter();
   return (
     <div>
       <div className={styles.waves}>
@@ -16,6 +18,11 @@ export function Header() {
       </div>
       <div className={styles.header}>
         <h1 className={styles.title}>Dive Log</h1>
+      </div>
+      <div>
+        <button className={styles.home} onClick={() => router.push("/")}>
+          Home
+        </button>
       </div>
     </div>
   );

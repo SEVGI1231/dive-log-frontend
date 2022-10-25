@@ -9,14 +9,14 @@ export function MainButtons({ appState }) {
         <button
           className={styles.button1}
           onClick={() => router.push("/newdive")}
-          disabled={appState.userID == null}
+          // disabled={appState.userID == null}
         >
           Add Dive
         </button>
         <button
           className={styles.button2}
           onClick={() => router.push("/dives")}
-          disabled={appState.userID == null}
+          // disabled={appState.userID == null}
         >
           View Dives
         </button>

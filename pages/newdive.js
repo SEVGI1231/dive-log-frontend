@@ -1,11 +1,13 @@
-import styles from "../styles/NewDive.module.css";
+import styles from "../styles/NewDive.module.scss";
 import { useState } from "react";
 import { useAppContext } from "../context/appWrapper";
 import axios from "axios";
+import { useRouter } from "next/router";
 
 export default function NewDive() {
+  const router = useRouter();
   const initialValues = {
-    user_id: "",
+    diver_name: "",
     location: "",
     difficulty: "",
     max_depth: "",
@@ -22,7 +24,6 @@ export default function NewDive() {
   };
   const [appState, setAppState] = useAppContext();
   const [newDive, setNewdive] = useState(initialValues);
-  console.log("inside new dive", appState.userID);
   function handleChange(e) {
     const { name, value } = e.target;
     setNewdive({ ...newDive, [name]: value });
@@ -38,11 +39,11 @@ export default function NewDive() {
     }
   }
   async function handleSubmit(e) {
-    setAppState({ ...appState, userID: appState.userID });
+    e.preventDefault();
     try {
       axios
         .post("http://localhost:4000/new/dive", {
-          user_id: parseInt(newDive.user_id),
+          diver_name: newDive.diver_name,
           location: newDive.location,
           difficulty: parseInt(newDive.difficulty),
           max_depth: parseInt(newDive.max_depth),
@@ -69,6 +70,15 @@ export default function NewDive() {
     <div>
       <form className={styles.form} onSubmit={handleSubmit}>
         <div className={styles.content}>
+          <div>
+            <label>Diver Name</label>
+            <input
+              type="text"
+              name="diver_name"
+              onChange={handleChange}
+              value={newDive.diver_name}
+            />
+          </div>
           <div>
             <label>Location</label>
             <input

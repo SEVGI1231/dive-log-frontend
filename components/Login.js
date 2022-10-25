@@ -4,9 +4,11 @@ import styles from "./Header.module.scss";
 export default function Login({ users, appState, setAppState }) {
   function handleLogin(e) {
     setAppState({ ...appState, userID: e.target.value });
+    sessionStorage.setItem("user", e.target.value);
   }
   function handleLogout() {
     setAppState({ ...appState, userID: null });
+    sessionStorage.removeItem("user");
   }
   return (
     <>
